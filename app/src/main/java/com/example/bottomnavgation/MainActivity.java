@@ -50,21 +50,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         oneFragment = new ArrayList<>();
-        oneFragment.add( SecondeFragment.newInstance("Profile"));
-        oneFragment.add( SecondeFragment.newInstance("Setting"));
+        oneFragment.add(ProfileFragment.newInstance("Profile Page"));
+        oneFragment.add(SettingFragment.newInstance("Setting Page"));
+
 
         tabsList =new ArrayList<>();
         tabsList.add("All events") ;
-        tabsList.add("party") ;
+        tabsList.add("Party") ;
         tabsList.add("Tech events") ;
         tabsList.add("Programing") ;
 
 
         fragmentsList =new ArrayList<>();
-        fragmentsList.add( SecondeFragment.newInstance("All events"));
-        fragmentsList.add( SecondeFragment.newInstance("party"));
-        fragmentsList.add( SecondeFragment.newInstance("Tech events"));
-        fragmentsList.add( SecondeFragment.newInstance("Programing"));
+        fragmentsList.add( EventsFragment.newInstance("All events"));
+        fragmentsList.add( PartyFragment.newInstance("Party"));
+        fragmentsList.add( TecheEventsFragment.newInstance("Tech events"));
+        fragmentsList.add( PartyFragment.newInstance("Programing"));
 
 
 
@@ -86,8 +87,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding.bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
 
                 if (item.getItemId()== R.id.home1){
                     binding.tabLayout.setVisibility(View.VISIBLE);
